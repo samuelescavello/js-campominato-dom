@@ -8,7 +8,7 @@
 
 // In seguito l'utente clicca su una cella: se il numero è presente 
 // nella lista dei numeri generati - abbiamo calpestato una bomba - la 
-// cella si colora di rosso e la partita termina. Altrimenti la cella 
+// cella si colora di rosso e la partita termina. Altrimenti la cella     RIOLTOOO
 // cliccata si colora di azzurro e l'utente può continuare a cliccare 
 // sulle altre celle.
 
@@ -23,7 +23,10 @@
 let gridEl = document.getElementById('grid')
 let button = document.querySelector('.btn');
 let select = document.querySelector('.form-select')
+let sconfitta = document.getElementById('perso')
+let game = false ;
 button.addEventListener('click', function () {
+    game = true ; 
     gridEl.innerHTML = '';
     select.value;
     let arrBombe = [];
@@ -40,13 +43,21 @@ button.addEventListener('click', function () {
         
 
             newSquare.addEventListener('click', function () {
-                newSquare.classList.add('clicked')
-                console.log(i + 1)
-                if(arrBombe.includes(i + 1)){
-                    console.log('perso')
-                    newSquare.classList.add('clicked2')
+        
+                if (game === true){
+                    newSquare.classList.add('clicked')
+                    console.log(i + 1)
+                    if(arrBombe.includes(i + 1)){
+                        console.log('perso')
+                        newSquare.classList.add('clicked2')
+                        game = false;
+                        sconfitta.innerHTML= 'ritenta , sarai piú fortunato !!!'
+                    }
+                    
                 }
+
             });
+           
             newSquare.classList.add('square-100')
             gridEl.appendChild(newSquare);
 
@@ -63,11 +74,16 @@ button.addEventListener('click', function () {
             let newSquare = genSquare(i + 1);
 
             newSquare.addEventListener('click', function () {
-                newSquare.classList.add('clicked')
-                console.log(i + 1)
-                if(arrBombe.includes(i + 1)){
-                    console.log('perso')
-                    newSquare.classList.add('clicked2')
+                if (game === true){
+                    newSquare.classList.add('clicked')
+                    console.log(i + 1)
+                    if(arrBombe.includes(i + 1)){
+                        console.log('perso')
+                        newSquare.classList.add('clicked2')
+                        game = false;
+                        sconfitta.innerHTML= 'ritenta , sarai piú fortunato !!!'
+                    }
+                    
                 }
             });
             newSquare.classList.add('square-81')
@@ -84,11 +100,16 @@ button.addEventListener('click', function () {
             let newSquare = genSquare(i + 1);
 
             newSquare.addEventListener('click', function () {
-                newSquare.classList.add('clicked')
-                console.log(i + 1)
-                if(arrBombe.includes(i + 1)){
-                    console.log('perso')
-                    newSquare.classList.add('clicked2')
+                if (game === true){
+                    newSquare.classList.add('clicked')
+                    console.log(i + 1)
+                    if(arrBombe.includes(i + 1)){
+                        console.log('perso')
+                        newSquare.classList.add('clicked2')
+                        game = false;
+                        sconfitta.innerHTML= 'ritenta , sarai piú fortunato !!!'
+                    }
+                    
                 }
             });
             newSquare.classList.add('square-49')

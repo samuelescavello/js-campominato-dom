@@ -68,6 +68,10 @@ article.square-49{
     background-color: red;
 }
 
+#perso{
+    color: coral;
+}
+
 
 .clearfix::after{
     content: '';
