@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color:brown;
+}
+
+main{
+    padding: 3rem;
+    margin-top: 4rem;
+}
+
+nav{
+    background-color:coral;
+}
+
+#grid{
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
+    border: 2px solid white;
+}
+
+article.square{
+    border: 2px solid white;
+    float: left;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: centers;
+    color: white;
+    align-items: center;
+    font-size: xx-large;
+}
+
+article.square-100{
+    width: calc(100% / 10 );
+    height: calc(100% / 10 );
+}
+
+article.square-81{
+    width: calc(100% / 9 );
+    height: calc(100% / 9 );
+}
+
+article.square-49{
+    width: calc(100% / 7 );
+    height: calc(100% / 7 );
+}
+
+.square > span{
+    display: none;
+}
+
+.square.square.clicked > span{
+    display: block;
+}
+
+.square.square.clicked{
+    background-color: aqua;
+}
+
+.clearfix::after{
+    content: '';
+    clear: both;
+    display: block;
+}
