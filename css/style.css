@@ -64,6 +64,11 @@ article.square-49{
     background-color: aqua;
 }
 
+.square.square.clicked2{
+    background-color: red;
+}
+
+
 .clearfix::after{
     content: '';
     clear: both;

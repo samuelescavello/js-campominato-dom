@@ -23,80 +23,101 @@
 let gridEl = document.getElementById('grid')
 let button = document.querySelector('.btn');
 let select = document.querySelector('.form-select')
-button.addEventListener('click' , function(){
+button.addEventListener('click', function () {
     gridEl.innerHTML = '';
-    select.value
-    if(select.value === "1"){
-        for (let i = 0 ; i < 100 ; i++){
+    select.value;
+    let arrBombe = [];
+    let nums;
 
+    if (select.value === "1") {
+        for (let i = 0; i < 16; i++) {
+            nums = genUniqueNumberRandom(1, 100, arrBombe);
+            arrBombe.push(nums)
+        } console.log(arrBombe)
+        for (let i = 0; i < 100; i++) {
+            
             let newSquare = genSquare(i + 1);
         
-            newSquare.addEventListener('click' , function(){
+
+            newSquare.addEventListener('click', function () {
                 newSquare.classList.add('clicked')
                 console.log(i + 1)
+                if(arrBombe.includes(i + 1)){
+                    console.log('perso')
+                    newSquare.classList.add('clicked2')
+                }
             });
             newSquare.classList.add('square-100')
-            gridEl.appendChild(newSquare); 
+            gridEl.appendChild(newSquare);
 
         }
-        
-    }else if(select.value === "2"){
-        for (let i = 0 ; i < 81 ; i++){
-
+    
+    } else if (select.value === "2") {
+        for (let i = 0; i < 16; i++) {
+            nums = genUniqueNumberRandom(1, 81, arrBombe);
+            arrBombe.push(nums)
+        } console.log(arrBombe)
+        for (let i = 0; i < 81; i++) {
+            
+            
             let newSquare = genSquare(i + 1);
-        
-            newSquare.addEventListener('click' , function(){
+
+            newSquare.addEventListener('click', function () {
                 newSquare.classList.add('clicked')
                 console.log(i + 1)
+                if(arrBombe.includes(i + 1)){
+                    console.log('perso')
+                    newSquare.classList.add('clicked2')
+                }
             });
             newSquare.classList.add('square-81')
-            gridEl.appendChild(newSquare); 
+            gridEl.appendChild(newSquare);
 
         }
-    }else{
-        for (let i = 0 ; i < 49 ; i++){
+    } else {
+        for (let i = 0; i < 16; i++) {
+            nums = genUniqueNumberRandom(1, 49, arrBombe);
+            arrBombe.push(nums)
+        } console.log(arrBombe)
+        for (let i = 0; i < 49; i++) {
 
             let newSquare = genSquare(i + 1);
-        
-            newSquare.addEventListener('click' , function(){
+
+            newSquare.addEventListener('click', function () {
                 newSquare.classList.add('clicked')
                 console.log(i + 1)
+                if(arrBombe.includes(i + 1)){
+                    console.log('perso')
+                    newSquare.classList.add('clicked2')
+                }
             });
             newSquare.classList.add('square-49')
-            gridEl.appendChild(newSquare); 
+            gridEl.appendChild(newSquare);
 
         }
-    }     
+    }
 })
 
-function genSquare(cont){
+function genSquare(cont) {
     let newEl = document.createElement('article');
     newEl.innerHTML = '<span>' + cont + '</span>'
     newEl.classList.add('square');
     return newEl;
 }
 
-let arrBombe = [];
-let nums;
-
-for (let i = 0 ; i < 16 ; i++){
-     nums = genUniqueNumberRandom(1, 20, arrBombe);
-     arrBombe.push(nums)
-}console.log(arrBombe)
-
-function genUniqueNumberRandom (min, max, listanum){
-    let trovato = false; 
-    let numRandom ;
-    while(trovato === false ){
-        numRandom = getRndInteger (min , max);
-        if (listanum.includes(numRandom)=== false){
+function genUniqueNumberRandom(min, max, listanum) {
+    let trovato = false;
+    let numRandom;
+    while (trovato === false) {
+        numRandom = getRndInteger(min, max);
+        if (listanum.includes(numRandom) === false) {
             trovato = true;
-        } 
+        }
     }
     return numRandom;
 }
 
 
 function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
