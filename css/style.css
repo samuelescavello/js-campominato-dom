@@ -9,8 +9,8 @@ body{
 }
 
 main{
-    padding: 3rem;
-    margin-top: 4rem;
+    padding: 2rem;
+    margin-top: 3rem;
 }
 
 nav{
@@ -19,8 +19,8 @@ nav{
 
 #grid{
     margin: 0 auto;
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
     border: 2px solid white;
 }
 
@@ -66,10 +66,15 @@ article.square-49{
 
 .square.square.clicked2{
     background-color: red;
+    color: black;
 }
 
 #perso{
     color: coral;
+}
+
+#ss{
+    color: aquamarine;
 }
 
 
